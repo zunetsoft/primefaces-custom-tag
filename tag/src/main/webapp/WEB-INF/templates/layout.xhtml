@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet library="css/960" name="text.css"/>
+        <h:outputStylesheet library="css/960" name="960.css"/>
+        <title>Title</title>        
+    </h:head>
+    <h:body>
+        <div class="container_16" style="margin-top: 20px; min-height: 600px;">
+            <div class="container_16" style="min-height: 50px;">
+                <!-- header="Top" resizable="true" closable="true" collapsible="true"-->
+                <ui:include src="../../navi/header.xhtml" />
+            </div>
+            <div class="clear"></div>
+            <div class="grid_4" style="height: 100%; min-height: 500px;">
+                <!--header="Left" resizable="true" closable="true" collapsible="true">-->                
+                <ui:include src="../../navi/menu.xhtml" />                
+            </div>
+            <div class="grid_10" style="height: 100%; min-height: 500px;">
+                <ui:insert name="content">Put default content here, if any.</ui:insert>
+            </div>                 
+            <div class="grid_2" style="height: 100%; min-height: 500px;">
+                <!-- header="Right" resizable="true" closable="true" collapsible="true" effect="drop">-->
+                <h:outputText value="Right unit content." />
+            </div>          
+            <div class="clear"></div>
+            <div class="grid_16" style="min-height: 20px;">
+                <!-- header="Bottom" resizable="true" closable="true" collapsible="true">-->
+                <h:outputText value="South unit content." />
+            </div>
+            <div class="clear"></div>
+            <!--<p:layoutUnit position="center">
+                <ui:include src="../../navi/header.xhtml" />
+            </p:layoutUnit>-->
+        </div>
+    </h:body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>pack.messages.messages</base-name>
+            <var>msgs</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>SUCCESS</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>WRONG_USERNAME_OR_PASSWORD</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>    
+    
+    <component>
+        <component-type>pack.component.CategoriesTag</component-type>
+        <component-class>pack.component.CategoriesTag</component-class>
+    </component>
+
+    <render-kit>        
+        <renderer>
+            <component-family>pack.component</component-family>
+            <renderer-type>pack.component.CategoriesTagRenderer</renderer-type>
+            <renderer-class>pack.component.CategoriesTagRenderer</renderer-class>
+        </renderer>
+    </render-kit> 
+    
+    <factory>
+        <exception-handler-factory>
+            pack.exception.CustomExceptionHandlerFactory
+        </exception-handler-factory>
+    </factory>
+</faces-config>
